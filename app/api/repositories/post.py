@@ -17,7 +17,7 @@ class PostRepository(BaseRepository[Post]):
         Args:
             db (Session): The SQLAlchemy session to use for database operations.
         """
-        super().__init__(db, Post)
+        super().__init__(Post, db)
 
     def get_posts_by_author(self, author_id: str):
         """

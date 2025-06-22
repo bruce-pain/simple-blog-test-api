@@ -13,7 +13,7 @@ post = APIRouter(prefix="/posts", tags=["Blog Posts"])
 
 
 @post.post(
-    path="/",
+    path="",
     status_code=status.HTTP_201_CREATED,
     response_model=schemas.PostResponse,
     summary="Create a new blog post",
@@ -111,7 +111,7 @@ def get_posts_by_author(
     )
 
 @post.get(
-    path="/",
+    path="",
     status_code=status.HTTP_200_OK,
     response_model=schemas.PostListResponse,
     summary="Get all blog posts",
@@ -119,21 +119,19 @@ def get_posts_by_author(
     tags=["Blog Posts"],
 )
 def get_all_posts(
-    db: Annotated[Session, Depends(get_db)],
-    current_user: User = Depends(get_current_user),
+    db: Annotated[Session, Depends(get_db)]
 ):
     """
     Endpoint to retrieve all blog posts.
 
     Args:
         db (Annotated[Session, Depends]): The database session.
-        current_user (User): The currently authenticated user.
 
     Returns:
         schemas.PostListResponse: The list of all blog posts.
     """
     service = PostService(db=db)
-    posts = service.get_all_posts(current_user=current_user)
+    posts = service.get_all_posts()
     
     return schemas.PostListResponse(
         status_code=status.HTTP_200_OK,
