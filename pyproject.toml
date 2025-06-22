@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "fastapi-boilerplate"
+name = "simple-blog-test-api"
 version = "0.1.0"
-description = "A simple FastAPI backend boilerplate, based on the HNG FastAPI Boilerplate"
+description = "A simple FastAPI backend for a blog application."
 authors = ["Franklin Ikeh <ikehfranklin06@gmail.com>"]
 readme = "README.md"
 
