@@ -18,3 +18,14 @@ class Post(BaseTableModel):
 
     def __str__(self):
         return f"Post: {self.title} by {self.author.username}"
+    
+    def to_dict(self):
+        """Convert Post instance to dictionary."""
+        return {
+            "id": self.id,
+            "title": self.title,
+            "content": self.content,
+            "author_id": self.author_id,
+            "created_at": self.created_at.isoformat(),
+            "updated_at": self.updated_at.isoformat(),
+        }
