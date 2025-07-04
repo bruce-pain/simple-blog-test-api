@@ -1,6 +1,5 @@
 from pydantic import BaseModel, EmailStr
 from enum import Enum
-from typing import List, Optional
 from app.core.base.schema import BaseResponseModel
 
 # Transaction type enum

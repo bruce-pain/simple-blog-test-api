@@ -3,7 +3,6 @@ from sqlalchemy.orm import Session
 from typing import Annotated
 
 from app.db.database import get_db
-from app.core.dependencies.security import get_current_user
 
 from app.api.v1.transaction import schemas
 from app.api.services.transaction import TransactionService

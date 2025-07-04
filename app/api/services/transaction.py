@@ -1,6 +1,5 @@
 from fastapi import HTTPException, status
 from sqlalchemy.orm import Session
-from typing import List
 
 from app.api.models.transaction import Transaction
 from app.api.repositories.transaction import TransactionRepository
